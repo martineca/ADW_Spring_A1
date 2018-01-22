@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org" xmlns:xlmns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>test</title>
+</head>
+<body>
+<!--<p th:text="'Hello World.'"> Hello World !</p> -->
+
+<table>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Password</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+    <tr th:each="user : ${users}">
+        <td th:text="${user.firstname}">Alex</td>
+        <td th:text="${user.lastname}"></td>
+        <td th:text="${user.password}"></td>
+        <td><a href="#" th:href="@{/user/delete/} + ${user.id}">delete</a></td>
+        <td><a href="#" th:href="@{/user/update/} + ${user.id}">update</a></td>
+    </tr>
+</table>
+
+
+<div>
+    <ol>
+        <li th:each="user : ${users}">
+            <span th:text="${user.firstname} + ' ' + ${user.lastname} + ',' + ${user.password}"></span>
+            <a href="#" th:href="@{/user/delete/} + ${user.id}">delete</a>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>

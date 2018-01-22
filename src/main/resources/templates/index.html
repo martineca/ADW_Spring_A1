@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org" xmlns:xlmns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <th:block th:include="fragments/header :: headerinc"></th:block>
+
+</head>
+<body>
+<div th:include="fragments/header :: headerlogged"></div>
+
+<h1 class="text-center">Notes Organizer - Laravel  </h1>
+
+<div id="notesWrapper">
+    <div id="notesContent">
+    <li th:each="note : ${notes}">
+        <p th:text="${note.title}"> Title: New note 2.0 </p>
+        <p th:text="${note.content}"> Content: How about this one... huh </p>
+        <a href="#" th:href="@{/note/deleteNote/} + ${note.id}">delete</a>
+        <a href="#" th:href="@{/note/updateNote/} + ${note.id}">edit</a>
+    </li>
+    </div>
+    <a href="#" th:href="@{/note/addNote/}" class="text-center">Add note</a>
+</div>
+
+<!--<table>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+    <tr th:each="note : ${notes}">
+        <td th:text="${note.title}">Alex</td>
+        <td th:text="${note.content}"></td>
+
+        <td><a href="#" th:href="@{/note/deleteNote/} + ${note.id}">delete</a></td>
+        <td><a href="#" th:href="@{/note/updateNote/} + ${note.id}">update</a></td>
+    </tr>
+</table>-->
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org" xmlns:xlmns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <th:block th:include="fragments/header :: headerinc"></th:block>
+</head>
+<body>
+<div th:include="fragments/header :: headerlogged"></div>
+
+
+<div class="content">
+
+    <h3>User Registration</h3>
+<form action="#" th:action="@{/note/addNote}" th:object="${note}" method="post">
+
+   <!-- <input type="hidden" th:field="*{id}"/> -->
+    <p> Title </p> <input type="text" th:field="*{title}" />
+    <p> Content </p> <input type="text" th:field="*{content}" />
+    <!--  <p> Password: </p> <input type="text" th:field="*{addedby}" />-->
+
+     <input type="submit" value="Submit" />
+ </form>
+</div>
+ </body>
+ </html>

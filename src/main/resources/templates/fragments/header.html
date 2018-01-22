@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="headerinc">
+
+    <title>Spring/MVC note organizer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+          body {
+            background:#f5f8fa;
+          }
+          #notesWrapper {
+            width: 300px;
+            text-align:center;
+            margin:0 auto;
+            }
+            #notesContent {
+             border-radius: 20px;
+            padding: 30px 0px;
+            margin: 15px auto;
+            background: #00BCFF;
+            color: #fff;
+
+            }
+            #notesWrapper li {
+              list-style: none;
+            }
+            .nav {
+                background: #fff;
+             }
+             .content {
+             margin-left: 15px;
+             }
+    </style>
+</div>
+
+<div th:fragment="header">
+ <div>
+     <ul class="nav">
+         <li class="nav-item">
+             <a class="nav-link" th:href="@{/}">Home</a>
+         </li>
+         <li class="nav-item">
+             <a class="nav-link" th:href="@{/user/login}">Login</a>
+         </li>
+         <li class="nav-item">
+             <a class="nav-link" th:href="@{/user/register}">Register</a>
+         </li>
+     </ul>
+
+     <ul>
+
+     </ul>
+ </div>
+
+</div>
+
+
+<div th:fragment="headerlogged">
+    <div>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Home</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/user/logout}">Logout</a>
+            </li>
+
+        </ul>
+
+        <ul>
+
+        </ul>
+    </div>
+
+</div>
+
+
+</html>

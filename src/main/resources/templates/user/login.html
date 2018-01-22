@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org" xmlns:xlmns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <th:block th:include="fragments/header :: headerinc"></th:block>
+</head>
+<body>
+<div th:include="fragments/header :: header"></div>
+
+  <div class="content">
+      <h3>Login</h3>
+    <form action="#" th:action="@{/user/login}" th:object="${user}" method="post">
+
+        <p> Username: </p> <input type="text" th:field="*{username}" />
+        <p> Password: </p> <input type="text" th:field="*{password}" />
+
+        <input type="submit" value="Login" />
+    </form>
+
+    <div th:if="${message!=null}">
+        <p/>
+        <span th:text="${message}"></span>
+    </div>
+  </div>
+</body>
+</html>
