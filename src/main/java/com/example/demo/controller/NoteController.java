@@ -61,7 +61,6 @@ public class NoteController {
     }
 
     @RequestMapping(value="/updateNote", method = RequestMethod.POST)
-    // @ResponseBody
     public String update(Model model, @ModelAttribute("user") Note note){
         noteService.save(note);
         // return "Register successful for " + user.getFirstname() + " " + user.getLastname();
@@ -70,10 +69,10 @@ public class NoteController {
 
 
     @RequestMapping(value="/deleteNote/{note}", method = RequestMethod.GET)
-    @ResponseBody
+    //@ResponseBody
     public String delete(@PathVariable Note note){
         noteService.delete(note);
 
-        return "Note with title: '" + note.getTitle() + "' has been deleted.";
+        return "note/noteDeleted";
     }
 }
