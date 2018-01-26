@@ -17,29 +17,11 @@
         <p th:text="${note.content}"> Content: How about this one... huh </p>
         <a href="#" th:href="@{/note/deleteNote/} + ${note.id}">delete</a>
         <a href="#" th:href="@{/note/updateNote/} + ${note.id}">edit</a>
+        <p> ------- </p>
     </li>
     </div>
     <a href="#" th:href="@{/note/addNote/}" class="text-center">Add note</a>
 </div>
-
-<!--<table>
-    <tr>
-        <th>Title</th>
-        <th>Content</th>
-
-        <th>Delete</th>
-        <th>Update</th>
-    </tr>
-
-    <tr th:each="note : ${notes}">
-        <td th:text="${note.title}">Alex</td>
-        <td th:text="${note.content}"></td>
-
-        <td><a href="#" th:href="@{/note/deleteNote/} + ${note.id}">delete</a></td>
-        <td><a href="#" th:href="@{/note/updateNote/} + ${note.id}">update</a></td>
-    </tr>
-</table>-->
-
 
 </body>
 </html>

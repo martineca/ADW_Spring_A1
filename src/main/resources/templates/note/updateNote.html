@@ -7,18 +7,15 @@
 <body>
 <div th:include="fragments/header :: headerlogged"></div>
 
+    <div class="content">
+        <h3>Note update</h3>
+        <form action="#" th:action="@{/note/updateNote}" th:object="${note}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+            <p> Title: </p> <input type="text" th:field="*{title}" />
+            <p> Content: </p> <input type="text" th:field="*{content}" />
 
-
-
-<div class="content">
-    <h3>Note update</h3>
-<form action="#" th:action="@{/note/updateNote}" th:object="${note}" method="post">
-    <input type="hidden" th:field="*{id}"/>
-    <p> Title: </p> <input type="text" th:field="*{title}" />
-    <p> Content: </p> <input type="text" th:field="*{content}" />
-
-    <input type="submit" value="Update" />
-</form>
-</div>
+            <input type="submit" value="Update" />
+        </form>
+    </div>
 </body>
 </html>

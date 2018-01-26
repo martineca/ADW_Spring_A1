@@ -10,11 +10,9 @@
   <div class="content">
         <h3>User Registration</h3>
         <form action="#" th:action="@{/user/register}" th:object="${user}" method="post">
-
-           <!-- <input type="hidden" th:field="*{id}"/> -->
-            <p> First Name: </p> <input type="text" th:field="*{firstname}" />
+            <p> Username: </p> <input type="text" th:field="*{firstname}" />
             <p> Last Name: </p> <input type="text" th:field="*{lastname}" />
-            <p> Password: </p> <input type="text" th:field="*{password}" />
+            <p> Password: </p> <input type="password" th:field="*{password}" />
 
             <input type="submit" value="Register" />
         </form>

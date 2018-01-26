@@ -8,8 +8,6 @@
 <div th:include="fragments/header :: header"></div>
     <div class="content">
         <h3>User update</h3>
-
-
         <form action="#" th:action="@{/user/update}" th:object="${user}" method="post">
             <input type="hidden" th:field="*{id}"/>
             <p> First Name: </p> <input type="text" th:field="*{firstname}" />

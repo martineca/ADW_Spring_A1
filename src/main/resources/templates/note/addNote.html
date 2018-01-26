@@ -10,15 +10,13 @@
 
 <div class="content">
 
-    <h3>User Registration</h3>
+    <h3>Create new note</h3>
 <form action="#" th:action="@{/note/addNote}" th:object="${note}" method="post">
 
-   <!-- <input type="hidden" th:field="*{id}"/> -->
     <p> Title </p> <input type="text" th:field="*{title}" />
     <p> Content </p> <input type="text" th:field="*{content}" />
-    <!--  <p> Password: </p> <input type="text" th:field="*{addedby}" />-->
 
-     <input type="submit" value="Submit" />
+    <input type="submit" value="Submit" />
  </form>
 </div>
  </body>
